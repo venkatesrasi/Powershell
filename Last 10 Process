@@ -7,3 +7,9 @@ Get-Process | Sort-Object PM | select Name,@{name="PM (GB)";expression={$_.PM/1G
 Get-Process | Sort-Object PM | select Name,@{name="PM (GB)";expression={[math]::Round($_.PM/1GB,2)}} -Last 10 
 
 Get-Process | sort PM | select Name,PM -Last 10
+
+===============================================================================================================
+To check the Installed Patch in windows server
+(New-Object -c Microsoft.Update.Session).CreateUpdateSearcher().Search("IsInstalled=0").Updates|Select Title
+
+c:\get-hotfix
